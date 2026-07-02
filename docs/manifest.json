@@ -1,0 +1,81 @@
+[
+  {
+    "path": "src/app/layout.tsx",
+    "purpose": "Root layout: Inter font, dark theme, metadata, GlobalProvider wrapper",
+    "dependencies": []
+  },
+  {
+    "path": "src/app/globals.css",
+    "purpose": "Tailwind directives + CSS custom properties + risk color scales",
+    "dependencies": []
+  },
+  {
+    "path": "src/app/page.tsx",
+    "purpose": "Landing page \u2014 Decide/Learn surface: hero with risk calculator, features, pricing, FAQ",
+    "dependencies": []
+  },
+  {
+    "path": "src/app/dashboard/layout.tsx",
+    "purpose": "Dashboard layout: sidebar nav + topbar + StoreProvider wrapper",
+    "dependencies": [
+      "src/lib/store.tsx"
+    ]
+  },
+  {
+    "path": "src/app/dashboard/page.tsx",
+    "purpose": "Dashboard home \u2014 Monitor surface: risk distribution, recent changes, service health",
+    "dependencies": [
+      "src/lib/store.tsx",
+      "src/lib/types.ts"
+    ]
+  },
+  {
+    "path": "src/app/dashboard/changes/page.tsx",
+    "purpose": "Change requests CRUD \u2014 Operate surface: filterable table, create/edit/delete",
+    "dependencies": [
+      "src/lib/store.tsx",
+      "src/lib/types.ts"
+    ]
+  },
+  {
+    "path": "src/app/dashboard/changes/[id]/page.tsx",
+    "purpose": "Change detail \u2014 Operate surface: risk breakdown, approval timeline, dependency map",
+    "dependencies": [
+      "src/lib/store.tsx",
+      "src/lib/types.ts"
+    ]
+  },
+  {
+    "path": "src/app/dashboard/services/page.tsx",
+    "purpose": "Services CRUD \u2014 Operate surface: service table, dependency matrix",
+    "dependencies": [
+      "src/lib/store.tsx",
+      "src/lib/types.ts"
+    ]
+  },
+  {
+    "path": "src/app/dashboard/settings/page.tsx",
+    "purpose": "Settings \u2014 Configure surface: thresholds, notifications, data import/export/reset",
+    "dependencies": [
+      "src/lib/store.tsx",
+      "src/lib/utils.ts"
+    ]
+  },
+  {
+    "path": "src/lib/store.tsx",
+    "purpose": "React Context + useReducer global state: all CRUD, localStorage sync, risk scoring, seed data",
+    "dependencies": [
+      "src/lib/types.ts"
+    ]
+  },
+  {
+    "path": "src/lib/types.ts",
+    "purpose": "TypeScript interfaces for ChangeRequest, Service, User, Metric, AuditLog",
+    "dependencies": []
+  },
+  {
+    "path": "src/lib/utils.ts",
+    "purpose": "Utilities: calculateRiskScore, generateId, formatDate, exportJSON, importJSON",
+    "dependencies": []
+  }
+]
